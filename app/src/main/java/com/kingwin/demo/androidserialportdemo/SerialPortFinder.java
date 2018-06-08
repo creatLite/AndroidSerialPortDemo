@@ -32,7 +32,7 @@ public class SerialPortFinder {
 
     Vector<Driver> getDrivers() throws IOException {
         if (mDrivers == null) {
-            mDrivers = new Vector<Driver>();
+            mDrivers = new Vector<>();
             LineNumberReader r = new LineNumberReader(new FileReader("/proc/tty/drivers"));
             String l;
             while ((l = r.readLine()) != null) {
@@ -51,7 +51,7 @@ public class SerialPortFinder {
     }
 
     public String[] getAllDevices() {
-        Vector<String> devices = new Vector<String>();
+        Vector<String> devices = new Vector<>();
         // Parse each driver
         Iterator<Driver> itdriv;
         try {
@@ -95,6 +95,7 @@ public class SerialPortFinder {
         Vector<File> mDevices = null;
         private String mDriverName;
         private String mDeviceRoot;
+
         public Driver(String name, String root) {
             mDriverName = name;
             mDeviceRoot = root;

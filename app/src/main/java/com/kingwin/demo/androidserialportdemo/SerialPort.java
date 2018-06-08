@@ -28,10 +28,10 @@ import java.io.OutputStream;
 
 public class SerialPort {
 
-    private static final String TAG = "SerialPort";
+    private static final String TAG = "SerialPort.c";
 
     static {
-        System.loadLibrary("serial_port");
+        System.loadLibrary("SerialPort");
     }
 
     /*
@@ -72,7 +72,7 @@ public class SerialPort {
     }
 
     // JNI
-    private native static FileDescriptor open(String path, int baudrate, int flags);
+    private native FileDescriptor open(String path, int baudrate, int flags);
 
     // Getters and setters
     public InputStream getInputStream() {
